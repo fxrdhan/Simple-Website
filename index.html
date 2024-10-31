@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' chrome-extension: 'unsafe-inline' 'unsafe-eval'; script-src 'self' chrome-extension: 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval'; connect-src 'self' chrome-extension:;">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wisata Kuliner Indonesia</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <button class="hamburger"></button>
+            <ul class="nav-links">
+                <li><a href="#home">Beranda</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Daerah</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#sumatra">Sumatra</a></li>
+                        <li><a href="#jawa">Jawa</a></li>
+                        <li><a href="#kalimantan">Kalimantan</a></li>
+                        <li><a href="#sulawesi">Sulawesi</a></li>
+                    </ul>
+                </li>
+                <li><a href="#about">Tentang</a></li>
+                <li><a href="#contact">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div id="content"></div>
+        <aside>
+            <h3>Profil Kontributor</h3>
+            <img src="images/profil.png" alt="Foto Profil">
+            <p>Selamat datang di blog Wisata Kuliner Indonesia!</p>
+        </aside>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Wisata Kuliner Indonesia. All rights reserved.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -29,42 +29,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    const articles = [
-        {
-            title: 'Rendang - Warisan Kuliner Dunia',
-            image: 'images/rendang.png',
-            description: 'Rendang adalah masakan daging yang berasal dari Minangkabau, Sumatra Barat, Indonesia.'
-        },
-        {
-            title: 'Soto Lamongan - Kuah Gurih Khas Jawa Timur',
-            image: 'images/soto.png',
-            description: 'Soto Lamongan adalah soto ayam khas Lamongan, Jawa Timur.'
-        }
-    ];
-
-    const content = document.getElementById('content');
-    const fragment = document.createDocumentFragment();
-
-    const createArticle = ({ title, image, description }) => {
-        const article = document.createElement('article');
-        article.innerHTML = `
-            <h2>${title}</h2>
-            <img src="${image}" alt="${title}" loading="lazy">
-            <p>${description}</p>
-        `;
-
-        const img = article.querySelector('img');
+    // Remove the articles array and content generation code since articles are now in HTML
+    
+    // Add error handling for images
+    document.querySelectorAll('img').forEach(img => {
         img.addEventListener('error', () => {
             img.src = 'images/error.png';
             img.alt = 'Image not found';
         });
-
-        return article;
-    };
-
-    articles.forEach(article => {
-        fragment.appendChild(createArticle(article));
     });
-
-    content.replaceChildren(fragment);
 });

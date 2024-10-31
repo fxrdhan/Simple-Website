@@ -4,69 +4,80 @@
 
 - **Fitur**: Toggle menu navigasi untuk tampilan mobile
 - **Cara Mengakses**:
-  - Klik tombol hamburger di pojok layar
-  - Menu akan muncul/sembunyi saat diklik
-  - Menu otomatis tertutup jika mengklik area di luar menu
+  - Klik tombol hamburger di pojok kanan atas
+  - Menu akan slide dari kanan ke kiri saat dibuka
+  - Menu otomatis tertutup saat mengklik area luar atau tombol close
 
-## 2. Dropdown Menu
+## 2. Sistem Konten Dinamis
 
-- **Fitur**: Menu dropdown yang bisa dibuka/tutup
-- **Cara Mengakses**:
-  - Klik tombol dengan class `.dropdown-toggle`
-  - Dropdown menu akan muncul/sembunyi
-  - Menu otomatis tertutup jika mengklik area di luar dropdown
-
-## 3. Sistem Artikel Dinamis
-
-- **Fitur**: Menampilkan artikel makanan secara dinamis dari data JavaScript
-- **Data Artikel**:
+- **Fitur**: Menampilkan konten secara dinamis dari data JavaScript
+- **Data Konten**:
   ```javascript
-  const articles = [
-    {
-      title: 'Rendang - Warisan Kuliner Dunia',
-      image: 'images/rendang.png',
-      description: 'Rendang adalah masakan daging yang berasal dari Minangkabau...'
-    },
-    {
-      title: 'Soto Lamongan - Kuah Gurih Khas Jawa Timur',
-      image: 'images/soto.png',
-      description: 'Soto Lamongan adalah soto ayam khas Lamongan, Jawa Timur.'
-    }
-  ]
+  const contents = {
+    kuliner: [
+      {
+        id: 1,
+        title: 'Rendang',
+        image: 'images/rendang.jpg',
+        description: 'Rendang adalah masakan daging tradisional Minangkabau...'
+      },
+      // ...more items
+    ],
+    wisata: [
+      {
+        id: 1,
+        title: 'Pantai Kuta',
+        image: 'images/kuta.jpg',
+        description: 'Pantai Kuta adalah destinasi wisata terkenal di Bali...'
+      },
+      // ...more items
+    ]
+  }
   ```
+
+## 3. Sistem Tab Navigation
+
+- **Fitur**: Navigasi tab untuk beralih antara konten berbeda
 - **Cara Mengakses**:
-  - Artikel ditampilkan otomatis saat halaman dimuat
-  - Tiap artikel menampilkan judul, gambar, dan deskripsi
-  - Gambar dimuat secara lazy loading untuk optimasi performa
+  - Klik tab untuk beralih antar kategori konten
+  - Konten dimuat secara dinamis sesuai tab aktif
+  - Animasi transisi saat pergantian tab
 
-## 4. Penanganan Error Gambar
+## 4. Image Handling & Optimization
 
-- **Fitur**: Sistem fallback untuk gambar yang tidak ditemukan
-- **Cara Mengakses**:
-  - Otomatis mengganti gambar yang rusak/tidak ditemukan dengan gambar default (`images/error.png`)
-  - Alt text akan berubah menjadi "Image not found"
-
-## 5. Optimasi Performa
-
-- **Fitur**: Implementasi teknik optimasi untuk performa website
+- **Fitur**:
+  - Lazy loading gambar
+  - Fallback untuk gambar error
+  - Optimasi loading dengan preload hints
 - **Implementasi**:
-  - Penggunaan `createDocumentFragment()` untuk mengurangi reflow/repaint
-  - Lazy loading pada gambar artikel
-  - Event delegation untuk penanganan klik di luar menu
-  - Pembersihan DOM dengan `replaceChildren()`
+  - Menggunakan loading="lazy" pada gambar
+  - Fallback image untuk gambar yang gagal dimuat
+  - Preload critical assets
 
-## 6. Event Handling
+## 5. Performance Optimizations
 
-- **Fitur**: Penanganan berbagai event user interaction
+- **Fitur**: Optimasi performa website
 - **Implementasi**:
-  - Event `DOMContentLoaded` untuk inisialisasi
-  - Click event untuk menu hamburger
-  - Click event untuk dropdown
-  - Click event di luar menu untuk menutup menu/dropdown
-  - Error handling untuk gambar
+  - Content caching
+  - Event delegation
+  - Efficient DOM manipulation
+  - Resource preloading
+  - Memory management dengan cleanup functions
 
-## Catatan Tambahan
+## 6. Interactive Features
 
-- Semua fitur diinisialisasi otomatis saat DOM selesai dimuat
-- Kode menggunakan pendekatan modular untuk memudahkan maintenance
-- Implementasi menggunakan vanilla JavaScript tanpa dependensi framework
+- **Fitur**: Berbagai fitur interaktif
+- **Implementasi**:
+  - Smooth scrolling
+  - Responsive navigation
+  - Dynamic content loading
+  - Touch-friendly interactions
+  - Animated transitions
+
+## 7. Error Handling
+
+- **Implementasi**:
+  1. Try-catch blocks untuk operasi kritikal
+  2. Fallback content untuk kegagalan loading
+  3. User feedback untuk error states
+  4. Graceful degradation

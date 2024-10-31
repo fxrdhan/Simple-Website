@@ -29,9 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Remove the articles array and content generation code since articles are now in HTML
-    
-    // Add error handling for images
     document.querySelectorAll('img').forEach(img => {
         img.addEventListener('error', () => {
             img.src = 'images/error.png';
